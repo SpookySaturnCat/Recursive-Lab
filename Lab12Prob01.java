@@ -1,24 +1,34 @@
-/*
- * File: Lab11Prob01.java
- * Authors: Seraphina Morrison Taylor O'Neal
- * DAte Created: 04/26/2024
+/**
+ * File: Lab11ONealMorrison.java 
+ * Class: CSCI 1302 
+ * Author: Taylor O'Neal, Seraphina Morrison 
+ * Created on: April 19th, 2024 Last Modified: April 19th,
+ * 2024 Description:
  */
+
 public class Lab12Prob01 {
 	public static void main(String[] args) {
-		System.out.println(recursiveAbstract(4));
+		System.out.println(function(3));
 	}
-
-
-	public static int recursiveAbstract(int num) {
-		
-		if (num == 0) {
+	public static int function(int index) {
+		if (index == 0) {
 			return 1;
-		} else if (num == 1) {
+		} else if (index == 1) {
 			return 3;
-		} else if (num == 2) {
+		} else if (index == 2) {
 			return 4;
-		}else {
-			return recursiveAbstract(num - 3) * (recursiveAbstract(num - 2) - recursiveAbstract(num - 1));
+		} else {
+			return function(index - 1) * (function(index - 1) - function(index - 2));
+		}
+	}
+	
+	public static String reverseString(String string) {
+		if (string.length() == 0) {
+			return string;
+		} else {
+			String newString = string.substring(string.length() - 1, string.length());
+			return string.charAt(string.length()) + reverseString(newString);
+			
 		}
 	}
 }
