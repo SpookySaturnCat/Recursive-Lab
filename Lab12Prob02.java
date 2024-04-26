@@ -8,7 +8,9 @@
 
 public class Lab12Prob02 {
 	public static void main(String[] args) {
-		System.out.println(function(3));
+		String string = "hello";
+		System.out.println(reverseString(string));
+				
 	}
 	public static int function(int index) {
 		if (index == 0) {
@@ -23,12 +25,10 @@ public class Lab12Prob02 {
 	}
 	
 	public static String reverseString(String string) {
-		if (string.length() == 0) {
+		if (string.length() == 1) {
 			return string;
 		} else {
-			String newString = string.substring(string.length() - 1, string.length());
-			return string.charAt(string.length()) + reverseString(newString);
-			
+			return string.charAt(string.length() - 1) + reverseString(string.substring(0, string.length() - 1));
 		}
 	}
 }
